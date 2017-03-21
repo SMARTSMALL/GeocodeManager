@@ -1,0 +1,27 @@
+//高德地图 经纬度坐标—>地名
+
+[[LZAMapSearchManager shareManager]geocodeAddressWithLatitude:29.535148 withLongitude:106.509509 withSuccess:^(NSString *address) {
+NSLog(@"address-======%@",address);
+} failure:^{
+
+}];
+
+//高德地图 地名 —>经纬度坐标
+
+[[LZAMapSearchManager shareManager]geocodeAddressWithAddressString:@"北京天安门" withSuccess:^(CGFloat latitude, CGFloat longitude) {
+
+} failure:^{
+
+}];
+//系统自带地图 地名 —>经纬度坐标
+[GeocoderManager geocodeAddressWithAddressString:@"北京天安门" withSuccess:^(CGFloat latitude, CGFloat longitude) {
+
+} failure:^{
+
+}];
+//系统自带地图 经纬度坐标—>地名
+[GeocoderManager geocodeAddressWithLatitude:29.535148 withLongitude:106.509509  withSuccess:^(NSString *address) {
+
+} failure:^{
+
+}];
